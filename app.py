@@ -22,7 +22,7 @@ app = FastAPI(
     version="0.1",
 )
 
-agent = LongTermMemoryAgent(model_name="gemini")
+agent = LongTermMemoryAgent(model_name="gpt-4o-mini")
 agent.build_graph()
 
 @app.get("/")
