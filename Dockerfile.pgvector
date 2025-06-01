@@ -2,6 +2,7 @@
 FROM postgres:latest
 
 RUN chmod +x ./init-scripts/vector_extension.sh
+# RUN dos2unix init-scripts/vector_extension.sh
 
 RUN apt-get update && apt-get install -y \
     build-essential \
