@@ -57,6 +57,16 @@ class LongTermMemoryAgent:
             return ChatGroq(model=model[5:], streaming=True)
         if model[:6] == "ollama":
             return ChatOllama(model=model[7:], streaming=True)
+        if model[:6] == "gemini":
+            from langchain_google_genai import ChatGoogleGenerativeAI
+            return ChatGoogleGenerativeAI(
+                model="gemini-2.0-flash",
+                temperature=0,
+                max_tokens=None,
+                timeout=None,
+                max_retries=2,
+                # other params...
+            )
 
     @observe()
     def agent(self, state: State) -> State:
