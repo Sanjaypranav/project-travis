@@ -5,6 +5,7 @@ WORKDIR /app
 COPY ./pyproject.toml /app/pyproject.toml
 ADD travis /app/travis
 COPY ./app.py /app/app.py
+COPY README.md /app/README.md
 # Copy the requirements file into the container
 RUN pip install --no-cache-dir --upgrade poetry
 #RUN poetry config virtualenvs.create true
